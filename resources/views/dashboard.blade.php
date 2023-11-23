@@ -40,6 +40,9 @@
             @if (Auth::user()->type == 'Admin')
             <li class="nav-item">
                 <a class="nav-link" href="/sub-user">Sub Users</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/department">Departments</a>
             </li> 
             @endif
         </ul>
