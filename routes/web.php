@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\CustomAuthController;
+use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SubUserController;
+use App\Models\Department;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,3 +39,11 @@ Route::post('/sub-user/add', [SubUserController::class, 'addNewUser'])->name('ne
 Route::get('/sub-user/edit/{id}', [SubUserController::class, 'edit'])->name('sub-user.edit');
 Route::post('/sub-user/update', [SubUserController::class, 'update'])->name('new-sub-user.update');
 Route::get('/sub-user/delete/{id}', [SubUserController::class, 'delete'])->name('sub-user.delete');
+
+Route::get('/department', [DepartmentController::class, 'index'])->name('department.index');
+Route::get('/department/fetch-all', [DepartmentController::class, 'fetchAll'])->name('department.fetchAll');
+Route::get('/department/view', [DepartmentController::class, 'addDepartmentView'])->name('department-add.view');
+Route::post('/department/add', [DepartmentController::class, 'addDepartment'])->name('department.add');
+Route::get('/department/edit/{id}', [DepartmentController::class, 'edit'])->name('department.edit');
+Route::post('/department/update', [DepartmentController::class, 'update'])->name('department.update');
+Route::get('/department/delete/{id}', [DepartmentController::class, 'delete'])->name('department.delete');
